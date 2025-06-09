@@ -19,7 +19,7 @@ public class Financiamento implements InterfaceUsuario {
 
     //Métodos próprios
     public double calcularPagamentoMensal() {
-        return (this.valorImovel / (this.prazoFinanciamento * 12)) * (1+ (this.taxaJuros / 12));
+        return ((this.valorImovel / (this.prazoFinanciamento * 12)) * (1 + (this.taxaJuros / 12)));
     }
 
     public double calcularPagamentoTotal() {
@@ -86,7 +86,7 @@ public class Financiamento implements InterfaceUsuario {
                 System.out.println("Valor incorreto, tente novamente.");
                 continue;
             }
-            return valorDigitado;
+            return valorDigitado / 100;
         }
     }
 }
