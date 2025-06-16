@@ -1,14 +1,10 @@
 package models;
 
-import java.util.Scanner;
-import utils.InterfaceUsuario;
 
 public class Financiamento {
     private double valorImovel;
     private int prazoFinanciamento;
     private double taxaJuros;
-
-    Scanner scanner = new Scanner(System.in);
 
     public Financiamento(double valorImovel, int prazoFinanciamento, double taxaJuros) {
         this.valorImovel = valorImovel;
