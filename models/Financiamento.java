@@ -3,18 +3,17 @@ package models;
 import java.util.Scanner;
 import utils.InterfaceUsuario;
 
-public class Financiamento implements InterfaceUsuario {
+public class Financiamento {
     private double valorImovel;
     private int prazoFinanciamento;
     private double taxaJuros;
 
     Scanner scanner = new Scanner(System.in);
 
-    public Financiamento() {
-        valorImovel = this.pedirValorImovel();
-        prazoFinanciamento = this.pedirPrazoFinanciamento();
-        taxaJuros =this.pedirTaxaJuros();
-        scanner.close();
+    public Financiamento(double valorImovel, int prazoFinanciamento, double taxaJuros) {
+        this.valorImovel = valorImovel;
+        this.prazoFinanciamento = prazoFinanciamento;
+        this.taxaJuros = taxaJuros;
     }
 
     //Métodos próprios
@@ -46,47 +45,4 @@ public class Financiamento implements InterfaceUsuario {
         return taxaJuros;
     }
 
-    //Interface Usuario
-    @Override
-    public double pedirValorImovel() {
-        while (true) {
-            System.out.print("Dígite o valor do imóvel: ");
-            double valorDigitado = scanner.nextDouble();
-
-            if (valorDigitado <= 0 || valorDigitado > 99999999) {
-                System.out.println("Valor incorreto, tente novamente.");
-                continue;
-            }
-            return valorDigitado;
-        }
-
-    }
-
-    @Override
-    public int pedirPrazoFinanciamento() {
-        while (true) {
-            System.out.print("Dígite o prazo do financiamento em anos: ");
-            int valorDigitado = scanner.nextInt();
-
-            if (valorDigitado <= 0 || valorDigitado > 30) {
-                System.out.println("Valor incorreto, tente novamente.");
-                continue;
-            }
-            return valorDigitado;
-        }
-    }
-
-    @Override
-    public double pedirTaxaJuros() {
-        while (true) {
-            System.out.print("Dígite a taxa de juros anual: ");
-            double valorDigitado = scanner.nextDouble();
-
-            if (valorDigitado <= 0 || valorDigitado > 100) {
-                System.out.println("Valor incorreto, tente novamente.");
-                continue;
-            }
-            return valorDigitado / 100;
-        }
-    }
 }

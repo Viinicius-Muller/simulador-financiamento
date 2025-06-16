@@ -1,6 +1,10 @@
 package models;
 
 public class Apartamento extends  Financiamento{
+    public Apartamento(double valorImovel, int prazoFinanciamento, double taxaJuros) {
+        super(valorImovel, prazoFinanciamento, taxaJuros);
+    }
+
     //De acordo com as regras do banco, todos os financiamentos de apartamentos deverão usar um sistema de amortização chamado PRICE.
     // Este sistema já é usado por vários bancos.
     @Override

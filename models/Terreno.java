@@ -1,6 +1,10 @@
 package models;
 
 public class Terreno extends Financiamento{
+    public Terreno(double valorImovel, int prazoFinanciamento, double taxaJuros) {
+        super(valorImovel, prazoFinanciamento, taxaJuros);
+    }
+
     //Cada parcela precisa ter um acréscimo de 2% sobre o seu valor com os juros já incluídos previamente.
     @Override
     public double calcularPagamentoMensal() {
