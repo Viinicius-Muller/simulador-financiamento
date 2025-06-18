@@ -1,8 +1,13 @@
 package models;
 
 public class Apartamento extends  Financiamento{
-    public Apartamento(double valorImovel, int prazoFinanciamento, double taxaJuros) {
+    private int numVagas; //vagas na garagem
+    private int numAndar; //andar onde o ap está situado
+
+    public Apartamento(double valorImovel, int prazoFinanciamento, double taxaJuros, int numVagas, int numAndar) {
         super(valorImovel, prazoFinanciamento, taxaJuros);
+        this.numVagas = numVagas;
+        this.numAndar = numAndar;
     }
 
     //De acordo com as regras do banco, todos os financiamentos de apartamentos deverão usar um sistema de amortização chamado PRICE.

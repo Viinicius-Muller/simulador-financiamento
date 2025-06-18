@@ -1,7 +1,7 @@
 package models;
 
 
-public class Financiamento {
+public abstract class Financiamento {
     private double valorImovel;
     private int prazoFinanciamento;
     private double taxaJuros;
@@ -9,7 +9,7 @@ public class Financiamento {
     public Financiamento(double valorImovel, int prazoFinanciamento, double taxaJuros) {
         this.valorImovel = valorImovel;
         this.prazoFinanciamento = prazoFinanciamento;
-        this.taxaJuros = taxaJuros;
+        this.taxaJuros = taxaJuros / 100;
     }
 
     //Métodos próprios

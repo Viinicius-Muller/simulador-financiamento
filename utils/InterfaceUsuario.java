@@ -73,7 +73,7 @@ public class InterfaceUsuario {
                 System.out.print("Digite a taxa de juros do financiamento: ");
                 taxaDeJuros = scanner.nextDouble();
 
-                if (taxaDeJuros > 100) {
+                if (taxaDeJuros > 1000) {
                     throw new TaxaInvalida("Porcentagem de juros muito alta: "+taxaDeJuros);
                 }
                 if (taxaDeJuros <= 0) {

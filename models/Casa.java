@@ -3,8 +3,13 @@ package models;
 import models.Financiamento;
 
 public class Casa extends Financiamento {
-    public Casa(double valorImovel, int prazoFinanciamento, double taxaJuros) {
+    private double tamanhoConstruido;
+    private double tamanhoTerreno;
+
+    public Casa(double valorImovel, int prazoFinanciamento, double taxaJuros, double tamanhoConstruido, double tamanhoTerreno) {
         super(valorImovel, prazoFinanciamento, taxaJuros);
+        this.tamanhoConstruido = tamanhoConstruido;
+        this.tamanhoTerreno = tamanhoTerreno;
     }
 
     //Casa | Adiciona R$80 a cada parcela
