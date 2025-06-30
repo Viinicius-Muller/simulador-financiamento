@@ -1,8 +1,8 @@
 package utils;
 
-import exceptions.PrazoInvalido;
-import exceptions.TaxaInvalida;
-import exceptions.ValorInvalido;
+import exceptions.PrazoInvalidoException;
+import exceptions.TaxaInvalidaException;
+import exceptions.ValorInvalidoException;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -19,16 +19,16 @@ public class InterfaceUsuario {
                 valorImovel = scanner.nextDouble();
 
                 if (valorImovel > 99999999) {
-                    throw new ValorInvalido("Valor muito alto: "+valorImovel);
+                    throw new ValorInvalidoException("Valor muito alto: "+valorImovel);
                 }
                 if (valorImovel <= 0) {
-                    throw new ValorInvalido("Valor do imóvel deve ser positivo: "+valorImovel);
+                    throw new ValorInvalidoException("Valor do imóvel deve ser positivo: "+valorImovel);
                 }
                 break;
             } catch (InputMismatchException e) {
                 System.out.println("Valor inválido.");
                 scanner.nextLine();
-            } catch (ValorInvalido e) {
+            } catch (ValorInvalidoException e) {
                 System.out.println(e.getMessage());
                 scanner.nextLine();
             }
@@ -46,17 +46,17 @@ public class InterfaceUsuario {
                 prazoFinanciamento = scanner.nextInt();
 
                 if (prazoFinanciamento > 25) {
-                    throw new PrazoInvalido("Prazo muito alto: "+prazoFinanciamento+" anos");
+                    throw new PrazoInvalidoException("Prazo muito alto: "+prazoFinanciamento+" anos");
                 }
                 if (prazoFinanciamento <= 0) {
-                    throw new PrazoInvalido("Prazo deve ser positivo: "+prazoFinanciamento);
+                    throw new PrazoInvalidoException("Prazo deve ser positivo: "+prazoFinanciamento);
                 }
 
                 break;
             } catch (InputMismatchException e) {
                 System.out.println("Valor inválido.");
                 scanner.nextLine();
-            } catch (PrazoInvalido e) {
+            } catch (PrazoInvalidoException e) {
                 System.out.println(e.getMessage());
                 scanner.nextLine();
             }
@@ -74,17 +74,17 @@ public class InterfaceUsuario {
                 taxaDeJuros = scanner.nextDouble();
 
                 if (taxaDeJuros > 1000) {
-                    throw new TaxaInvalida("Porcentagem de juros muito alta: "+taxaDeJuros);
+                    throw new TaxaInvalidaException("Porcentagem de juros muito alta: "+taxaDeJuros);
                 }
                 if (taxaDeJuros <= 0) {
-                    throw new TaxaInvalida("Porcentagem de juros deve ser positiva: "+taxaDeJuros);
+                    throw new TaxaInvalidaException("Porcentagem de juros deve ser positiva: "+taxaDeJuros);
                 }
 
                 break;
             } catch (InputMismatchException e) {
                 System.out.println("Valor inválido.");
                 scanner.nextLine();
-            } catch (TaxaInvalida e) {
+            } catch (TaxaInvalidaException e) {
                 System.out.println(e.getMessage());
                 scanner.nextLine();
             }
