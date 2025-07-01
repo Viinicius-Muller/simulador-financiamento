@@ -1,7 +1,12 @@
 package models;
 
 
-public abstract class Financiamento {
+import java.io.Serializable;
+
+public abstract class Financiamento implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private double valorImovel;
     private int prazoFinanciamento;
     private double taxaJuros;
@@ -41,4 +46,11 @@ public abstract class Financiamento {
         return taxaJuros;
     }
 
+    @Override
+    public String toString() {
+        return "[Valor do ímovel: "+this.getValorImovel()+
+                " | Valor total do financiamento: "+this.calcularPagamentoTotal()+
+                " | Taxa de juros: "+this.getTaxaJuros()* 100+
+                "% | Prazo do financiamento: "+this.getPrazoFinanciamento()+" anos]";
+    }
 }
