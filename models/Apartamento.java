@@ -1,6 +1,6 @@
 package models;
 
-public class Apartamento extends  Financiamento{
+public class Apartamento extends Financiamento{
     private int numVagas; //vagas na garagem
     private int numAndar; //andar onde o ap está situado
 
@@ -10,8 +10,14 @@ public class Apartamento extends  Financiamento{
         this.numAndar = numAndar;
     }
 
-    //De acordo com as regras do banco, todos os financiamentos de apartamentos deverão usar um sistema de amortização chamado PRICE.
-    // Este sistema já é usado por vários bancos.
+    public int getNumVagas() {
+        return numVagas;
+    }
+
+    public int getNumAndar() {
+        return numAndar;
+    }
+
     @Override
     public double calcularPagamentoMensal() {
         // 1. Calcular a taxa mensal
@@ -23,5 +29,14 @@ public class Apartamento extends  Financiamento{
         // 3. Aplicar a fórmula PRICE
         double fator = Math.pow(1 + taxaMensal, meses);
         return (getValorImovel() * fator * taxaMensal) / (fator - 1);
+    }
+
+
+    @Override
+    public String toString() {
+        return "[Valor do apartamento: "+this.getValorImovel()+
+                " | Total do financiamento: "+this.calcularPagamentoTotal()+
+                " | Taxa de juros: "+this.getTaxaJuros()* 100+
+                "% | Prazo: "+this.getPrazoFinanciamento()+" anos | Andar: "+this.getNumAndar()+" | Vagas: "+this.getNumVagas()+"]";
     }
 }

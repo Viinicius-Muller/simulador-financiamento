@@ -25,6 +25,9 @@ public class InterfaceTerreno extends InterfaceUsuario {
             }
         }
 
-        return tipoZona;
+        Character primeiraLetraGrande = Character.toUpperCase(tipoZona.charAt(0));
+        String resto = tipoZona.substring(1);
+
+        return primeiraLetraGrande + resto;
     }
 }

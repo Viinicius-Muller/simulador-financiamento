@@ -13,9 +13,20 @@ public class Terreno extends Financiamento{
         this.tipoZona = tipoZona;
     }
 
-    //Cada parcela precisa ter um acréscimo de 2% sobre o seu valor com os juros já incluídos previamente.
+    public String getTipoZona() {
+        return tipoZona;
+    }
+
     @Override
     public double calcularPagamentoMensal() {
         return (getValorImovel() / (getPrazoFinanciamento() * 12)) * (1+ (getTaxaJuros() / 12)) * 1.02 ;
+    }
+
+    @Override
+    public String toString() {
+        return "[Valor do terreno: "+this.getValorImovel()+
+                " | Total do financiamento: "+this.calcularPagamentoTotal()+
+                " | Taxa de juros: "+this.getTaxaJuros()* 100+
+                "% | Prazo: "+this.getPrazoFinanciamento()+" anos | Zona: "+this.getTipoZona()+"]";
     }
 }

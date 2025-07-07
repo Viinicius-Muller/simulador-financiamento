@@ -20,6 +20,18 @@ public class Casa extends Financiamento {
         }
     }
 
+    public double getTamanhoConstruido() {
+        return tamanhoConstruido;
+    }
+
+    public double getTamanhoTerreno() {
+        return tamanhoTerreno;
+    }
+
+    public double getAcrescimo() {
+        return acrescimo;
+    }
+
     //Casa | Adiciona R$80 a cada parcela
     @Override
     public double calcularPagamentoMensal() {
@@ -35,5 +47,13 @@ public class Casa extends Financiamento {
         }
 
         return totalComJuros + acrescimo;
+    }
+
+    @Override
+    public String toString() {
+        return "[Valor da casa: "+this.getValorImovel()+
+                " | Total do financiamento: "+this.calcularPagamentoTotal()+
+                " | Taxa de juros: "+this.getTaxaJuros()* 100+
+                "% | Prazo: "+this.getPrazoFinanciamento()+" anos | Terreno: "+this.getTamanhoTerreno()+"m² | Construido: "+this.getTamanhoConstruido()+"m²]";
     }
 }

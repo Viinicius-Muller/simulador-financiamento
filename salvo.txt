@@ -1,3 +1,0 @@
-[Valor do ímovel: 385000.0 | Valor total do financiamento: 402608.33333333326 | Taxa de juros: 10.0% | Prazo do financiamento: 15 anos]
-[Valor do ímovel: 385000.0 | Valor total do financiamento: 744701.3465717256 | Taxa de juros: 10.0% | Prazo do financiamento: 15 anos]
-[Valor do ímovel: 385000.0 | Valor total do financiamento: 395972.49999999994 | Taxa de juros: 10.0% | Prazo do financiamento: 15 anos]

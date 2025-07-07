@@ -49,8 +49,8 @@ public abstract class Financiamento implements Serializable {
     @Override
     public String toString() {
         return "[Valor do ímovel: "+this.getValorImovel()+
-                " | Valor total do financiamento: "+this.calcularPagamentoTotal()+
+                " | Total do financiamento: "+this.calcularPagamentoTotal()+
                 " | Taxa de juros: "+this.getTaxaJuros()* 100+
-                "% | Prazo do financiamento: "+this.getPrazoFinanciamento()+" anos]";
+                "% | Prazo: "+this.getPrazoFinanciamento()+" anos]";
     }
 }
