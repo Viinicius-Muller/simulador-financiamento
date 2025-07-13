@@ -1,5 +1,6 @@
 package utils;
 
+import exceptions.EmptyFinanceList;
 import models.Finance;
 
 import java.io.*;
@@ -7,7 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class DataSorage {
+public class DataStorage {
     static Path dataPath = Paths.get("financeData.txt"); //arquivo com os dados em texto
     static Path serArrayData = Paths.get("finances.ser"); //arquivo com objetos serializados
 
@@ -30,7 +31,6 @@ public class DataSorage {
             return (ArrayList<Finance>) in.readObject();
         } catch (Exception e) {
             System.out.println("Failed to load array file: "+e.getMessage());
-
             return null; //if wrong, returns null
         }
     }
@@ -38,12 +38,15 @@ public class DataSorage {
     //saves all data into .txt
     public static void saveFinanceData(ArrayList<Finance> finList) throws IOException {
         try ( FileWriter fw = new FileWriter(dataPath.toFile())) {
+            if (finList == null) throw new EmptyFinanceList("The finance list is empty");
 
             for (Finance fin : finList) {
                 fw.write(fin.toString()+"\n");
             }
 
             fw.flush();
+        } catch (EmptyFinanceList e) {
+            System.out.println("Error: "+e.getMessage());
         } catch (Exception e) {
             System.out.println("Failed to save data: "+e.getMessage());
         }

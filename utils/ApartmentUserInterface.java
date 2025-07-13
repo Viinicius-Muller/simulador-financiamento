@@ -32,7 +32,7 @@ public class ApartmentUserInterface extends UserInterface {
         return parkingSpaces;
     }
 
-    public static int askFloors() {
+    public static int askFloor() {
         int floor;
 
         while (true) {

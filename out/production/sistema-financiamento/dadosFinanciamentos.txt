@@ -1,3 +1,0 @@
-[Valor do apartamento: 5.0 | Total do financiamento: 5.661370093203297 | Taxa de juros: 5.0% | Prazo: 5 anos | Andar: 5 | Vagas: 5]
-[Valor da casa: 5.0 | Total do financiamento: 5.259920634920635 | Taxa de juros: 5.0% | Prazo: 5 anos | Terreno: 8888.0m² | Construido: 8888.0m²]
-[Valor do terreno: 532.0 | Total do financiamento: 544.9010000000001 | Taxa de juros: 5.0% | Prazo: 4 anos | Zona: Rural]

@@ -37,7 +37,7 @@ public class UserInterface {
         return propertyValue;
     }
 
-    public static int pedirPrazoFinanciamento() {
+    public static int askFinanceTime() {
         int financeTime;
 
         while (true) {
@@ -45,7 +45,7 @@ public class UserInterface {
                 System.out.print("Finance time in years: ");
                 financeTime = scanner.nextInt();
 
-                if (financeTime > 25) {
+                if (financeTime > 60) {
                     throw new InvalidDeadlineException("Time too high: "+financeTime+" years");
                 }
                 if (financeTime <= 0) {
