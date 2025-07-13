@@ -9,12 +9,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class DataStorage {
-    static Path dataPath = Paths.get("financeData.txt"); //arquivo com os dados em texto
-    static Path serArrayData = Paths.get("finances.ser"); //arquivo com objetos serializados
+    static Path dataPath = Paths.get("exampleFinanceData.txt"); //arquivo com os dados em texto
+    static Path serArrayData = Paths.get("exampleFinances.ser"); //arquivo com objetos serializados
 
     //saves arrayList into a .ser file
     public static void saveSerializedArray(ArrayList<Finance> finList) {
-        try (FileOutputStream fileOut = new FileOutputStream(serArrayData.toFile()); //create finances.ser
+        try (FileOutputStream fileOut = new FileOutputStream(serArrayData.toFile()); //create exampleFinances.ser
              ObjectOutputStream ous = new ObjectOutputStream(fileOut)) {
             ous.writeObject(finList); //saves serialized objects into .ser
             ous.flush(); //cleans writing data
